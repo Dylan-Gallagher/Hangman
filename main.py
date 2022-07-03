@@ -55,7 +55,7 @@ while True:
         print("Guesses remaining:", guesses_remaining)
 
     if guesses_remaining == 0:
-        print("ur shit, you're out of guesses")
+        print("ur shit, you're out of guesses, the word was:", chosen_word)
         user_lost()
         break
 
