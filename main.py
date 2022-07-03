@@ -1,11 +1,10 @@
 from words import words
 import random
-print("hey")
-print("")
+from hangmanpics import HANGMANPICS
 print("Welcome to Dylan's Hangman Game\n")
 
-guesses_remaining = 10
-print("Guesses remaining: " + str(guesses_remaining))
+wrong_guesses = 0
+#print("Wrong guesses: " + str(wrong_guesses))
 
 chosen_word = random.choice(words)
 chosen_letters = list(chosen_word)
@@ -34,7 +33,7 @@ while True:
     choice = input("\nChoose a letter: ")
     if choice in chosen_letters:
         print('\nWell done, you guessed correctly!')
-        print("Guesses remaining:", guesses_remaining)
+        print(HANGMANPICS[0])
         i = 0
         for letter in chosen_letters:
             if letter == choice:
@@ -50,11 +49,11 @@ while True:
             user_won()
             break
     else:
-        guesses_remaining = guesses_remaining - 1
+        wrong_guesses = wrong_guesses +1
         print('WRONG, stupid ass bitch')
-        print("Guesses remaining:", guesses_remaining)
+        #print(HANGMANPICS[])
 
-    if guesses_remaining == 0:
+    if wrong_guesses == 10:
         print("ur shit, you're out of guesses, the word was:", chosen_word)
         user_lost()
         break
