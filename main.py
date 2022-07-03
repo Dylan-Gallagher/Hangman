@@ -1,6 +1,6 @@
 from words import words
 import random
-
+print("hey")
 print("")
 print("Welcome to Dylan's Hangman Game\n")
 
